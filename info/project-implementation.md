@@ -4,14 +4,14 @@ Based on your specific setup with n8n running in Docker and the MCP endpoints co
 
 ## Prerequisites
 
-- macOS (your current system)
-- Python 3.12+ (you have 3.12.9)
-- n8n running in Docker container (accessible at http://localhost:5678)
-- n8n-nodes-mcp community node installed
-- n8n MCP Client SSE API configured at http://localhost:3002/sse
-- n8n messages endpoint at http://localhost:3002/messages
+- [x] macOS (your current system)
+- [x] Python 3.12+ (you have 3.12.9)
+- [x] n8n running in Docker container (accessible at http://localhost:5678)
+- [x] n8n-nodes-mcp community node installed
+- [x] n8n MCP Client SSE API configured at http://localhost:3002/sse
+- [x] n8n messages endpoint at http://localhost:3002/messages
 
-## Step 1: Set Up Python Environment
+## Step 1: Set Up Python Environment ✅
 
 First, let's create a proper virtual environment and install dependencies:
 
@@ -28,7 +28,7 @@ source venv/bin/activate
 pip install mcp requests httpx
 ```
 
-## Step 2: Create the MCP Server Implementation
+## Step 2: Create the MCP Server Implementation ✅
 
 Create a new file `server.py` with the following content:
 
@@ -177,7 +177,7 @@ if __name__ == "__main__":
     mcp.run(host="0.0.0.0", port=8000)
 ```
 
-## Step 3: Configure Cursor to Connect to Your MCP Server
+## Step 3: Configure Cursor to Connect to Your MCP Server ✅
 
 Create or update the `mcp.json` file in the Cursor application support directory:
 
@@ -198,7 +198,7 @@ Add the following content to the `mcp.json` file:
 ]
 ```
 
-## Step 4: Start the MCP Server
+## Step 4: Start the MCP Server ✅
 
 Run the server with the virtual environment activated:
 
@@ -211,12 +211,36 @@ source venv/bin/activate
 python server.py
 ```
 
-## Step 5: Test the Integration
+## Step 5: Test the Integration ⏳
 
-1. Ensure your n8n Docker container is running
-2. Verify that your MCP server is running
-3. Restart Cursor to apply the new MCP configuration
-4. In Cursor, test one of the available tools such as `list_n8n_workflows`
+1. [x] Ensure your n8n Docker container is running
+2. [x] Verify that your MCP server is running
+3. [x] Restart Cursor to apply the new MCP configuration
+4. [ ] In Cursor, test one of the available tools such as `list_n8n_workflows`
+
+## Project Status Updates
+
+### Completed Tasks
+
+- [x] Initial repository setup
+- [x] Virtual environment creation
+- [x] Basic dependencies installation
+- [x] GitHub repository configuration
+- [x] README.md setup with proper documentation
+- [x] Project structure established
+- [x] Basic MCP server implementation
+- [x] Connection to Cursor client established
+
+### Next Steps
+
+- [ ] Implement and test n8n workflow listing functionality
+- [ ] Add workflow triggering capabilities
+- [ ] Implement workflow status checking
+- [ ] Set up message passing to n8n
+- [ ] Add comprehensive error handling
+- [ ] Implement logging system
+- [ ] Add configuration file support
+- [ ] Create deployment documentation
 
 ## Advanced Implementation (Optional)
 
@@ -307,3 +331,4 @@ if __name__ == "__main__":
 - [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [MCP Specification](https://spec.modelcontextprotocol.io/specification/2025-03-26/)
 - [n8n API Documentation](https://docs.n8n.io/api/)
+- [Project Repository](https://github.com/J2DevStudio/n8n-mcp-server)
