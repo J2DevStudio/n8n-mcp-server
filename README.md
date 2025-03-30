@@ -2,33 +2,58 @@
 
 A Model Context Protocol (MCP) server that integrates Cursor with n8n workflow automation. This server enables seamless communication between Cursor's AI capabilities and n8n workflows.
 
+## Getting Started
+
+### First Time Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/J2DevStudio/n8n-mcp-server.git
+cd n8n-mcp-server
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Starting the Server
+
+```bash
+# Navigate to project directory (if not already there)
+cd /path/to/n8n-mcp-server
+
+# Activate the virtual environment
+source venv/bin/activate
+
+# Start the server
+python server.py
+```
+
+The server will be available at:
+
+- Main endpoint: http://127.0.0.1:3002
+- SSE endpoint: http://127.0.0.1:3002/sse
+- Messages endpoint: http://127.0.0.1:3002/messages
+
+### Development Setup
+
+When working in Cursor:
+
+1. Open the project in Cursor
+2. Select the correct Python interpreter:
+   - Press `Cmd + Shift + P`
+   - Type "Python: Select Interpreter"
+   - Choose the interpreter from the `venv` folder
+
 ## Prerequisites
 
 - Python 3.12+
 - n8n instance running (typically in Docker)
 - Cursor IDE
 - n8n-nodes-mcp community node installed in n8n
-
-## Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/J2DevStudio/n8n-mcp-server.git
-   cd n8n-mcp-server
-   ```
-
-2. Create and activate a virtual environment:
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-   ```
-
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 ## Configuration
 
