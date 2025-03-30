@@ -14,7 +14,7 @@ A Model Context Protocol (MCP) server that integrates Cursor with n8n workflow a
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/n8n-mcp-server.git
+   git clone https://github.com/J2DevStudio/n8n-mcp-server.git
    cd n8n-mcp-server
    ```
 
